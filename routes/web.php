@@ -23,3 +23,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('admin/routes', 'AdminController@admin')->middleware('admin');
+
+Route::get('instructor/routes', 'InstructorController@instructor')->middleware('instructor');
