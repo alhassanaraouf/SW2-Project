@@ -1,77 +1,16 @@
 @extends('profilelayout')
 @section('content')
-<div class='container'>
+<div >
 
 <div class='row'>
-<div class='col-md-8 col-md-offset-2'>
-<div class='panel panel-default'>
-<div class='panel-heading'>Dashboard</div>
+<div >
+<div >
    
-    
 <?php if(auth()->user()->isAdmin == 1){?>
-<div class='panel-body'>
-<h1><b>&nbsp Admin Profile</b></h1>
-<div class="container" >
-    
-    <div class="row justify-content-center">
-            
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header" align="center"></div>
-         
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif                    
-                </div>
-                
-            </div>
-        </div>
-    </div>
-       <img src="/pics/admin.jpg" width="30%" height="30%" style=" display: block;">
-</div></div>
-<?php } elseif(auth()->user()->isAdmin == 2){?>
- <div class='panel-body'>
-<h1><b>&nbsp Instructor Profile</b></h1>
-<div class="container" >
-    
-    <div class="row justify-content-center">
-            
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header" align="center"></div>
-         
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif                    
-                </div>
-                
-            </div>
-        </div>
-    </div>
-       <img src="/pics/ins.png" width="30%" height="30%" style=" display: block;">
-</div>
-    </div>
-    <?php } else echo '<div class="panel-heading"><h1><b>&nbsp Student Profile</b></h1>
-<div class="container" >
-    
-    <div class="row justify-content-center">
-            
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header" align="center"></div>
-                
-            </div>
-        </div>
-    </div>
-       <img src="/pics/student.png" width="30%" height="30%" style=" display: block;">
-</div></div>';?>
- <div>
+<div >
+    <div class="w3-bar w3-dark-grey">
+    <li class="w3-bar-item w3-button">&nbsp &nbsp &nbsp &nbsp Admin Pannel</li>
+     <div>
        <button style="border: none;outline: 0; display: inline-block; padding: 10px 25px; color: black; background-color: #ddd; text-align: center; cursor: pointer;float:right;"><div  aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="{{ route('logout') }}"
                     onclick="event.preventDefault();
@@ -84,6 +23,88 @@
                     </form>
                    </div></button>
 </div>
+</div>
+<section>
+    
+  <nav style="height:100%;">
+    <ul>
+        <br>
+      <img src="/pics/admin.png" width="80%">
+          <div class="w3-bar w3-dark-grey" ><ul align="center"><a href="#">Manage Users</a></ul></div>
+        <br>
+      <div class="w3-bar w3-dark-grey"><ul align="center"><a href="#">Manage Courses</a></ul></div>
+    </ul>
+  </nav>
+    
+  
+  <article>
+    
+    <h1><img src="/pics/ad.png" width="50" height="45">Adminstration Roles</h1>
+      <hr>
+    <p>Admin will be able to manage all users of the system, adding, updating, deleteing and list them all,but as admin you cannot change anyone's password without his own agreement to avoid any problms, you havent the right to delete any one without a reason.</p><hr>
+    <p>Admin will be able to manage all Courses of the system, adding, updating, deleteing and list them all,but as admin you have Also the rights to update courses description, show which courses is available for the semester, also will havee the right to add it's time and update in it.</p><hr>
+    <p>An Administrator provides office and administrative support to either a team or individual. This role is vital for the smooth-running of a business. Duties may include fielding telephone calls, receiving and directing visitors, word processing, creating spreadsheets and presentations, and filing. Additionally, Administrators are often responsible for specific projects and tasks, as well as overseeing the work of junior staff.
+
+</p>
+      
+  </article>
+</section>
+
+    
+    
+</div>
+    
+    
+    
+<?php } elseif(auth()->user()->isAdmin == 2){?>
+ <div>
+   <div class="w3-bar w3-dark-grey">
+    <li class="w3-bar-item w3-button">&nbsp Instructor Profile</li>
+     <div>
+       <button style="border: none;outline: 0; display: inline-block; padding: 10px 25px; color: black; background-color: #ddd; text-align: center; cursor: pointer;float:right;"><div  aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+                  {{ __('Logout') }}
+                  </a>
+
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                    </form>
+                   </div></button>
+</div>
+  </div>
+     
+     
+    </div>
+    
+<?php } elseif(auth()->user()->isAdmin == ''){?>
+ <div>
+   <div class="w3-bar w3-dark-grey">
+    <li class="w3-bar-item w3-button">&nbsp Student Profile</li>
+     <div>
+       <button style="border: none;outline: 0; display: inline-block; padding: 10px 25px; color: black; background-color: #ddd; text-align: center; cursor: pointer;float:right;"><div  aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+                  {{ __('Logout') }}
+                  </a>
+
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                    </form>
+                   </div></button>
+</div>
+  </div>
+     
+     
+    </div>
+    
+    <?php } else echo ' <div>
+
+     
+    </div>';?>
+
 </div>
 </div>
 </div>
