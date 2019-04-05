@@ -21,7 +21,7 @@
          <th>E-mail</th>
         <th>Password</th>
          <th>Type</th>
-         <th>Operations</th>
+         <th>Delete</th>
         </tr>
        </thead>
        <tbody>
@@ -60,6 +60,7 @@ $(document).ready(function(){
      html += '<td contenteditable class="column_name" data-column_name="email" data-id="'+data[count].id+'">'+data[count].email+'</td>';
      html += '<td contenteditable class="column_name" data-column_name="password" data-id="'+data[count].id+'">'+data[count].password+'</td>';
      html += '<td contenteditable class="column_name" data-column_name="isAdmin" data-id="'+data[count].id+'">'+data[count].isAdmin+'</td>';
+     html += '<td><button type="button" class="btn btn-danger btn-xs delete" id="'+data[count].id+'">Delete</button></td></tr>';
     }
     $('tbody').html(html);
    }
@@ -91,6 +92,47 @@ $(document).ready(function(){
    $('#message').html("<div class='alert alert-danger'>All Fields are required</div>");
   }
  });
+
+ $(document).on('blur', '.column_name', function(){
+  var column_name = $(this).data("column_name");
+  var column_value = $(this).text();
+  var id = $(this).data("id");
+  
+  if(column_value != '')
+  {
+   $.ajax({
+    url:"{{ route('livetable.update_data') }}",
+    method:"POST",
+    data:{column_name:column_name, column_value:column_value, id:id, _token:_token},
+    success:function(data)
+    {
+     $('#message').html(data);
+    }
+   })
+  }
+  else
+  {
+   $('#message').html("<div class='alert alert-danger'>Enter some value</div>");
+  }
+ });
+
+ $(document).on('click', '.delete', function(){
+  var id = $(this).attr("id");
+  if(confirm("Are you sure you want to delete this records?"))
+  {
+   $.ajax({
+    url:"{{ route('livetable.delete_data') }}",
+    method:"POST",
+    data:{id:id, _token:_token},
+    success:function(data)
+    {
+     $('#message').html(data);
+     fetch_data();
+    }
+   });
+  }
+ });
+
 
 });
 </script>

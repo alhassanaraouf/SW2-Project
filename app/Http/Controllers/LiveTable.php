@@ -28,7 +28,7 @@ class LiveTable extends Controller
             $data = array(
                 'name'    =>  $request->name,
                 'email'     =>  $request->email,
-                'password' => bcrypt($request->password),
+                'password'     => bcrypt($request->password),
                 'isAdmin'     =>  $request->isAdmin
             );
             $id = DB::table('users')->insert($data);
@@ -39,5 +39,29 @@ class LiveTable extends Controller
         } 
     }
 
+    function update_data(Request $request)
+    {
+        if($request->ajax())
+        {
+            $data = array(
+                $request->column_name       =>  $request->column_value
+            );
+            DB::table('users')
+                ->where('id', $request->id)
+                ->update($data);
+            echo '<div class="alert alert-success">Data Updated</div>';
+        }
+    }
+
+    function delete_data(Request $request)
+    {
+        if($request->ajax())
+        {
+            DB::table('users')
+                ->where('id', $request->id)
+                ->delete();
+            echo '<div class="alert alert-success">Data Deleted</div>';
+        }
+    }
 }
 ?>

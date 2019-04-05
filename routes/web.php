@@ -31,3 +31,6 @@ Route::get('instructor/routes', 'InstructorController@instructor')->middleware('
 Route::get('/livetable', 'LiveTable@index');
 Route::get('/livetable/fetch_data', 'LiveTable@fetch_data');
 Route::post('/livetable/add_data', 'LiveTable@add_data')->name('livetable.add_data');
+Route::post('/livetable/update_data', 'LiveTable@update_data')->name('livetable.update_data');
+Route::post('/livetable/delete_data', 'LiveTable@delete_data')->name('livetable.delete_data');
+
