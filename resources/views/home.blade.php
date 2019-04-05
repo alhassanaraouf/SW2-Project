@@ -9,7 +9,7 @@
 <?php if(auth()->user()->isAdmin == 1){?>
 <div >
     <div class="w3-bar w3-dark-grey">
-    <li class="w3-bar-item w3-button">&nbsp &nbsp &nbsp &nbsp Admin Pannel</li>
+    <li class="w3-bar-item w3-button">&nbsp Admin Pannel</li>
      <div>
        <button style="border: none;outline: 0; display: inline-block; padding: 10px 25px; color: black; background-color: #ddd; text-align: center; cursor: pointer;float:right;"><div  aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="{{ route('logout') }}"
@@ -30,7 +30,9 @@
     <ul>
         <br>
       <img src="/pics/admin.png" width="80%">
-          <div class="w3-bar w3-dark-grey" ><ul align="center"><a href="#">Manage Users</a></ul></div>
+        <div class="w3-bar w3-dark-grey"><ul align="center"><a href="/home">Profile</a></ul></div>
+        <br>
+          <div class="w3-bar w3-dark-grey" ><ul align="center"><a href="/livetable">Manage Users</a></ul></div>
         <br>
       <div class="w3-bar w3-dark-grey"><ul align="center"><a href="#">Manage Courses</a></ul></div>
     </ul>
