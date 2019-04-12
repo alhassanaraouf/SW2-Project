@@ -34,3 +34,11 @@ Route::post('/livetable/add_data', 'LiveTable@add_data')->name('livetable.add_da
 Route::post('/livetable/update_data', 'LiveTable@update_data')->name('livetable.update_data');
 Route::post('/livetable/delete_data', 'LiveTable@delete_data')->name('livetable.delete_data');
 
+
+Route::get('/livetablec', 'CoursesController@index');
+Route::get('/livetablec/fetch_data', 'CoursesController@fetch_data');
+Route::post('/livetablec/add_data', 'CoursesController@add_data')->name('livetablec.add_data');
+Route::post('/livetablec/update_data', 'CoursesController@update_data')->name('livetablec.update_data');
+Route::post('/livetablec/delete_data', 'CoursesController@delete_data')->name('livetablec.delete_data');
+
+
