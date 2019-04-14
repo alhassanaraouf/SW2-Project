@@ -26,7 +26,7 @@
         <br>
           <div class="w3-bar w3-dark-grey" ><ul align="center"><a href="/livetable">Manage Users</a></ul></div>
         <br>
-      <div class="w3-bar w3-dark-grey"><ul align="center"><a href="#">Manage Courses</a></ul></div>
+      <div class="w3-bar w3-dark-grey"><ul align="center"><a href="/livetablec">Manage Courses</a></ul></div>
         <br>
       
     </ul>
