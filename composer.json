@@ -12,8 +12,7 @@
         "fideloper/proxy": "^4.0",
         "laravel/framework": "5.7.*",
         "laravel/tinker": "^1.0",
-        "maatwebsite/excel": "^3.1",
-        "webpatser/laravel-uuid": "^3.0"
+        "maatwebsite/excel": "^3.1"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
@@ -23,7 +22,6 @@
         "nunomaduro/collision": "^2.0",
         "phpunit/phpunit": "^7.0"
     },
-    
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
@@ -61,12 +59,5 @@
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
         ]
-    },
-        "repositories": {
-        "packagist.org": {
-            "type": "composer",
-            "url": "https://repo-eu-uk-1.packagist.org"
-        }
     }
-
 }

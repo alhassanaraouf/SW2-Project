@@ -2,7 +2,7 @@
 @section('content')
 <div >
 
-<div >
+<div class='row'>
 <div >
 <div >
    
@@ -14,7 +14,7 @@
        <button style="border: none;outline: 0; display: inline-block; padding: 10px 25px; color: black; background-color: #ddd; text-align: center; cursor: pointer;float:right;"><div  aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="{{ route('logout') }}"
                     onclick="event.preventDefault();
-                    document.getElementById('logout-form').submit();" id="logoutadmin">
+                    document.getElementById('logout-form').submit();">
                   {{ __('Logout') }}
                   </a>
 
@@ -32,12 +32,9 @@
       <img src="/pics/admin.png" width="80%">
         <div class="w3-bar w3-dark-grey"><ul align="center"><a href="/home">Profile</a></ul></div>
         <br>
-          <div class="w3-bar w3-dark-grey" ><ul align="center"><a href="/livetable" id="manageuser">Manage Users</a></ul></div>
+          <div class="w3-bar w3-dark-grey" ><ul align="center"><a href="/livetable">Manage Users</a></ul></div>
         <br>
-      <div class="w3-bar w3-dark-grey"><ul align="center"><a href="/livetablec" id="managecourses">Manage Courses</a></ul></div>
-              <br>
-      <div class="w3-bar w3-dark-grey"><ul align="center"><a href="/viewstudent" id="managecourses">Add Final Result</a></ul></div>
-
+      <div class="w3-bar w3-dark-grey"><ul align="center"><a href="/livetablec">Manage Courses</a></ul></div>
     </ul>
   </nav>
     
@@ -63,13 +60,13 @@
     
 <?php } elseif(auth()->user()->isAdmin == 2){?>
  <div>
-    <div class="w3-bar w3-dark-grey">
+   <div class="w3-bar w3-dark-grey">
     <li class="w3-bar-item w3-button">&nbsp Instructor Profile</li>
      <div>
        <button style="border: none;outline: 0; display: inline-block; padding: 10px 25px; color: black; background-color: #ddd; text-align: center; cursor: pointer;float:right;"><div  aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="{{ route('logout') }}"
                     onclick="event.preventDefault();
-                    document.getElementById('logout-form').submit();" id="logoutins">
+                    document.getElementById('logout-form').submit();">
                   {{ __('Logout') }}
                   </a>
 
@@ -78,10 +75,9 @@
                     </form>
                    </div></button>
 </div>
-</div>
-
-    
-    
+  </div>
+     
+     
     </div>
     
 <?php } elseif(auth()->user()->isAdmin == ''){?>
@@ -92,7 +88,7 @@
        <button style="border: none;outline: 0; display: inline-block; padding: 10px 25px; color: black; background-color: #ddd; text-align: center; cursor: pointer;float:right;"><div  aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="{{ route('logout') }}"
                     onclick="event.preventDefault();
-                    document.getElementById('logout-form').submit();" id="logouts">
+                    document.getElementById('logout-form').submit();">
                   {{ __('Logout') }}
                   </a>
 
@@ -102,6 +98,7 @@
                    </div></button>
 </div>
   </div>
+     
      
     </div>
     

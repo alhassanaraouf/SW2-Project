@@ -23,7 +23,7 @@
         <a href="#manual" class="w3-bar-item w3-button">Manual</a>
       </div>
     </div>
-  <a href="/login" class="w3-bar-item w3-button w3-blue w3-right" id="login">Login</a>
+  <a href="/login" class="w3-bar-item w3-button w3-blue w3-right">Login</a>
   </div>
     <div class="header-image">
   <div class="header-text">
