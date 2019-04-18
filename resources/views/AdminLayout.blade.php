@@ -28,7 +28,8 @@
         <br>
       <div class="w3-bar w3-dark-grey"><ul align="center"><a href="/livetablec">Manage Courses</a></ul></div>
         <br>
-      
+      <div class="w3-bar w3-dark-grey"><ul align="center"><a href="/viewstudent" id="managecourses">Add Final Grade</a></ul></div>
+
     </ul>
   </nav>
 
