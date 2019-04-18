@@ -41,4 +41,8 @@ Route::post('/livetablec/add_data', 'CoursesController@add_data')->name('livetab
 Route::post('/livetablec/update_data', 'CoursesController@update_data')->name('livetablec.update_data');
 Route::post('/livetablec/delete_data', 'CoursesController@delete_data')->name('livetablec.delete_data');
 
+Route::get('/viewstudent', 'ShowStudents@index');
+Route::get('/viewstudent/fetch_data', 'ShowStudents@fetch_data');
+Route::post('/viewstudent/update_data', 'ShowStudents@update_data')->name('viewstudent.update_data');
+
 
