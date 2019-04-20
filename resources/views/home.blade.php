@@ -59,14 +59,14 @@
     
     
 <?php } elseif(auth()->user()->isAdmin == 2){?>
- <div>
-   <div class="w3-bar w3-dark-grey">
+<div>
+    <div class="w3-bar w3-dark-grey">
     <li class="w3-bar-item w3-button">&nbsp Instructor Profile</li>
      <div>
        <button style="border: none;outline: 0; display: inline-block; padding: 10px 25px; color: black; background-color: #ddd; text-align: center; cursor: pointer;float:right;"><div  aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="{{ route('logout') }}"
                     onclick="event.preventDefault();
-                    document.getElementById('logout-form').submit();">
+                    document.getElementById('logout-form').submit();" id="logoutins">
                   {{ __('Logout') }}
                   </a>
 
@@ -75,9 +75,38 @@
                     </form>
                    </div></button>
 </div>
-  </div>
-     
-     
+</div>
+<section>
+    
+  <nav style="height:100%;">
+    <ul>
+        
+        <img src="/pics/ins.jpg" width="80%">
+        <div class="w3-bar w3-dark-grey"><ul align="center"><a href="/home">Profile</a></ul></div>
+        <br>
+          <div class="w3-bar w3-dark-grey" ><ul align="center"><a href="/instructorcourses" id="inscourse">Courses</a></ul></div>
+        <br>
+      <div class="w3-bar w3-dark-grey"><ul align="center"><a href="/books">Courses Books</a></ul></div>
+        <br>
+    <div class="w3-bar w3-dark-grey"><ul align="center"><a href="/managepost">Post Note</a></ul></div>
+        <br>
+    </ul>
+  </nav>
+    
+  
+  <article>
+    
+    <h1><img src="/pics/ad.png" width="50" height="45">Instructor Roles</h1>
+      <hr>
+    <p>Instructor will be able to manage all student of the course that he's responsible for,Organize them, Add grades to them and get report about them.</p><hr>
+    <p>Instructor will be also able to see all the Courses that he's responsible for, and decide what to include on that course, projects, and quizes.</p><hr>
+    <p>An Administrator provides office and administrative support to either a team or individual. This role is vital for the smooth-running of a business. Duties may include fielding telephone calls, receiving and directing visitors, word processing, creating spreadsheets and presentations, and filing. Additionally, Administrators are often responsible for specific projects and tasks, as well as overseeing the work of junior staff.</p>
+      
+  </article>
+</section>
+
+    
+    
     </div>
     
 <?php } elseif(auth()->user()->isAdmin == ''){?>
