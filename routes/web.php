@@ -45,4 +45,8 @@ Route::get('/viewstudent', 'ShowStudents@index');
 Route::get('/viewstudent/fetch_data', 'ShowStudents@fetch_data');
 Route::post('/viewstudent/update_data', 'ShowStudents@update_data')->name('viewstudent.update_data');
 
+Route::resource('books', 'BookController');
+Route::get('books/{uuid}/download', 'BookController@download')->name('books.download');
+
+
 
