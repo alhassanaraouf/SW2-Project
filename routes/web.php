@@ -48,5 +48,10 @@ Route::post('/viewstudent/update_data', 'ShowStudents@update_data')->name('views
 Route::resource('books', 'BookController');
 Route::get('books/{uuid}/download', 'BookController@download')->name('books.download');
 
+Route::get('/managepost', 'ManagePostController@index');
+Route::get('/managepost/fetch_data', 'ManagePostController@fetch_data');
+Route::post('/managepost/add_data', 'ManagePostController@add_data')->name('managepost.add_data');
+Route::post('/managepost/update_data', 'ManagePostController@update_data')->name('managepost.update_data');
+Route::post('/managepost/delete_data', 'ManagePostController@delete_data')->name('managepost.delete_data');
 
 
