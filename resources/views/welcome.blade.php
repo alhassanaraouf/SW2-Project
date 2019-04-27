@@ -83,32 +83,46 @@ Its fields can be divided into theoretical and practical disciplines. Computatio
 <div class="team" id="team">
     <h2 align="center"><img src="/pics/team.png" width="50" height="50"><b>Team Members</b></h2>
     <hr class="my-4">
-<div class="card" >
+<div class="card1" >
   <img src="/pics/hassan.jpg" alt="Avatar" style="width:100%">
   <div class="container">
-    <h4><b>Al-Hassan Abdelraof</b></h4> 
-    <p><img src="/pics/mail.png" width="20" height="20">&nbsp Al-Hassan@gmail.com<p> 
+    <h4><b>AlHassan Abdelraof</b></h4> 
+    <p><img src="/pics/mail.png" width="20" height="20">&nbsp Al-Hassan<p> 
   </div>
 </div>
-<div class="card" >
+<div class="card1" >
   <img src="/pics/mirna.jpg" alt="Avatar" style="width:100%">
   <div class="container">
     <h4><b>Mirna Mourad</b></h4> 
-    <p><img src="/pics/mail.png" width="20" height="20">&nbsp mirnamourad411@gmail.com</p> 
+    <p><img src="/pics/mail.png" width="20" height="20">&nbsp mirnamourad411</p> 
   </div>
 </div>
-<div class="card">
-  <img src="/pics/ahmed.jpg" alt="Avatar" style="width:100%">
+<div class="card1">
+  <img src="/pics/rahma.jpg" alt="Avatar" style="width:100%">
   <div class="container">
-    <h4><b>Ahmed Sayed</b></h4> 
-    <p><img src="/pics/mail.png" width="20" height="20">&nbsp ahmedsayed@gmail.com</p> 
+    <h4><b>Rahma Ashraf</b></h4> 
+    <p><img src="/pics/mail.png" width="20" height="20">&nbsp RahmaAshraf</p> 
   </div>
 </div>
-<div class="card">
+<div class="card1">
   <img src="/pics/m.jpg" alt="Avatar" style="width:100%">
   <div class="container" >
     <h4><b>Mayar Mostafa</b></h4> 
-    <p><img src="/pics/mail.png" width="20" height="20">&nbsp mayarmostafa@gmail.com</p> 
+    <p><img src="/pics/mail.png" width="20" height="20">&nbsp mayarmostafa</p> 
+  </div>
+</div>
+<div class="card1">
+  <img src="/pics/shrouk.jpg" alt="Avatar" style="width:100%">
+  <div class="container" >
+    <h4><b>Shrouk Ragab</b></h4> 
+    <p><img src="/pics/mail.png" width="20" height="20">&nbsp Shroukragab</p> 
+  </div>
+</div>
+<div class="card1">
+  <img src="/pics/ashrak.jpg" alt="Avatar" style="width:100%">
+  <div class="container" >
+    <h4><b>Ashrakat Ashraf</b></h4> 
+    <p><img src="/pics/mail.png" width="20" height="20">&nbsp AshrakatAshraf</p> 
   </div>
 </div>
 </div>

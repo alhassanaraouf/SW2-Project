@@ -4,20 +4,31 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use App\Repositories\User\UserInterface as UserInterface;
+
 
 class LiveTable extends Controller
 {
+    
+    public function __construct(UserInterface $user)
+    {
+        $this->user = $user;
+    }
+
+    
     function index()
     {
         return view('livetable');
     }
+    
 
     function fetch_data(Request $request)
     {
         if($request->ajax())
         {
-            $data = DB::table('users')->orderBy('id','desc')->get();
-            echo json_encode($data);
+//           $data = DB::table('users')->orderBy('id','desc')->get();
+            $data =  $this->user->getAll(); 
+            echo $data;
         }
     }
 
@@ -57,9 +68,10 @@ class LiveTable extends Controller
     {
         if($request->ajax())
         {
-            DB::table('users')
+/*            DB::table('users')
                 ->where('id', $request->id)
-                ->delete();
+                ->delete();*/
+            $this->user->delete($request->id);
             echo '<div class="alert alert-success">Data Deleted</div>';
         }
     }

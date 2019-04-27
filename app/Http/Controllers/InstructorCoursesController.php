@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 use DB;
+use App\Person\Person;
 
 class InstructorCoursesController extends Controller
 {
@@ -15,29 +17,17 @@ class InstructorCoursesController extends Controller
 
     function fetch_data(Request $request)
     {
-        if($request->ajax())
-            
-        {
-            
-            $data = DB::table('courses')->where('instructor',$request->id)->get();
-            echo json_encode($data);
-        }
+         $person = new Person();
+        $person->fetch_data($request);
+    }
+    
+       function add_data(Request $request)
+    {
+
+        $person = new Person();
+        $person->add_data($request);
+        
     }
 
-    function add_data(Request $request)
-    {
-        if($request->ajax())
-        {
-            $data = array(
-                'cname'    =>  $request->cname,
-                'code'     =>  $request->code,
-                'instructor'     =>  $request->instructor,
-            );
-            $id = DB::table('courses')->insert($data);
-            if($id > 0)
-            {
-                echo '<div class="alert alert-success">Data Inserted</div>';
-            }
-        } 
-    }
+
 }

@@ -20,6 +20,7 @@
          <th>Course Name</th>
          <th>Code</th>
          <th>Instructor</th>
+        <th>Level</th>
          <th>Delete</th>
         </tr>
        </thead>
@@ -51,6 +52,7 @@ $(document).ready(function(){
     html += '<td contenteditable id="cname"></td>';
     html += '<td contenteditable id="code"></td>';
      html += '<td contenteditable id="instructor"></td>';
+         html += '<td contenteditable id="Level"></td>';
     html += '<td><button type="button" class="btn btn-success btn-xs" id="add">Add</button></td></tr>';
     for(var count=0; count < data.length; count++)
     {
@@ -58,6 +60,7 @@ $(document).ready(function(){
      html +='<td contenteditable class="column_name" data-column_name="cname" data-id="'+data[count].id+'">'+data[count].cname+'</td>';
      html += '<td contenteditable class="column_name" data-column_name="code" data-id="'+data[count].id+'">'+data[count].code+'</td>';
     html += '<td contenteditable class="column_name" data-column_name="instructor" data-id="'+data[count].id+'">'+data[count].instructor+'</td>';
+    html += '<td contenteditable class="column_name" data-column_name="Level" data-id="'+data[count].id+'">'+data[count].Level+'</td>';
      html += '<td><button type="button" class="btn btn-danger btn-xs delete" id="'+data[count].id+'">Delete</button></td></tr>';
     }
     $('tbody').html(html);
@@ -71,12 +74,13 @@ $(document).ready(function(){
   var cname = $('#cname').text();
   var code = $('#code').text();
   var instructor = $('#instructor').text();
-  if(cname != '' && code != '' && instructor != '')
+  var Level = $('#Level').text();
+  if(cname != '' && code != '' && instructor != '' && Level != '')
   {
    $.ajax({
     url:"{{ route('livetablec.add_data') }}",
     method:"POST",
-    data:{cname:cname, code:code,instructor:instructor, _token:_token},
+    data:{cname:cname, code:code,instructor:instructor,Level:Level, _token:_token},
     success:function(data)
     {
      $('#message').html(data);
