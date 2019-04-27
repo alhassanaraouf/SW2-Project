@@ -2,7 +2,7 @@
 @section('content')
 <div >
 
-<div class='row'>
+<div >
 <div >
 <div >
    
@@ -14,7 +14,7 @@
        <button style="border: none;outline: 0; display: inline-block; padding: 10px 25px; color: black; background-color: #ddd; text-align: center; cursor: pointer;float:right;"><div  aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="{{ route('logout') }}"
                     onclick="event.preventDefault();
-                    document.getElementById('logout-form').submit();">
+                    document.getElementById('logout-form').submit();" id="logoutadmin">
                   {{ __('Logout') }}
                   </a>
 
@@ -32,9 +32,12 @@
       <img src="/pics/admin.png" width="80%">
         <div class="w3-bar w3-dark-grey"><ul align="center"><a href="/home">Profile</a></ul></div>
         <br>
-          <div class="w3-bar w3-dark-grey" ><ul align="center"><a href="/livetable">Manage Users</a></ul></div>
+          <div class="w3-bar w3-dark-grey" ><ul align="center"><a href="/livetable" id="manageuser">Manage Users</a></ul></div>
         <br>
-      <div class="w3-bar w3-dark-grey"><ul align="center"><a href="/livetablec">Manage Courses</a></ul></div>
+      <div class="w3-bar w3-dark-grey"><ul align="center"><a href="/livetablec" id="managecourses">Manage Courses</a></ul></div>
+              <br>
+      <div class="w3-bar w3-dark-grey"><ul align="center"><a href="/viewstudent" id="managecourses">Add Final Result</a></ul></div>
+
     </ul>
   </nav>
     
@@ -59,7 +62,7 @@
     
     
 <?php } elseif(auth()->user()->isAdmin == 2){?>
-<div>
+ <div>
     <div class="w3-bar w3-dark-grey">
     <li class="w3-bar-item w3-button">&nbsp Instructor Profile</li>
      <div>
@@ -117,7 +120,7 @@
        <button style="border: none;outline: 0; display: inline-block; padding: 10px 25px; color: black; background-color: #ddd; text-align: center; cursor: pointer;float:right;"><div  aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="{{ route('logout') }}"
                     onclick="event.preventDefault();
-                    document.getElementById('logout-form').submit();">
+                    document.getElementById('logout-form').submit();" id="logouts">
                   {{ __('Logout') }}
                   </a>
 
@@ -128,7 +131,38 @@
 </div>
   </div>
      
+<section>
+  <nav >
+    <ul>
+      <img src="/pics/student.png" width="80%">
+        <br><br>
+        <div class="w3-bar w3-dark-grey"><ul align="center"><a href="/home">Profile</a></ul></div>
+        <br>
+          <div class="w3-bar w3-dark-grey" ><ul align="center"><a href="/studentcourses">Courses</a></ul></div>
+        <br>
+      <div class="w3-bar w3-dark-grey"><ul align="center"><a href="/stubook" id="coursebook">Courses Books</a></ul></div>
+        <br>
+         <div class="w3-bar w3-dark-grey"><ul align="center"><a href="/viewpost" id="postnote">View Note</a></ul></div>
+        <br>
+     <div class="w3-bar w3-dark-grey"><ul align="center"><a href="/viewgrade" id="postnote">Final Grade</a></ul></div>
+      
+    </ul>
+  </nav>
      
+<article>
+    
+    <h1><img src="/pics/ad.png" width="50" height="45">Student Roles</h1>
+      <hr>
+    <p>Student Will be Able To register to the college website, Then Loggin With Valid E-mail and Password.</p><hr>
+    <p>Student Also will be able to See all the courses in system to choose courses,and see Courses Books to be downloaded.</p><hr>
+    <p>When any instructor send important notes, Student will be able to see this note.</p>
+    <hr>
+    <p>Finally, Student will be able to see his final Grade.</p>
+    <hr>
+    <p>As Student you have to follow all the college roles and be carful of what you're doing.</p><br>
+      
+  </article>
+</section>
     </div>
     
     <?php } else echo ' <div>

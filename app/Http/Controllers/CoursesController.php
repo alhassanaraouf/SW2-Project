@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use App\Person\Person;
 
 class CoursesController extends Controller
 {
@@ -14,53 +15,29 @@ class CoursesController extends Controller
 
     function fetch_data(Request $request)
     {
-        if($request->ajax())
-        {
-            $data = DB::table('courses')->orderBy('id','desc')->get();
-            echo json_encode($data);
-        }
+        $person = new Person();
+        $person->fetch_data($request);
     }
 
+    
     function add_data(Request $request)
     {
-        if($request->ajax())
-        {
-            $data = array(
-                'cname'    =>  $request->cname,
-                'code'     =>  $request->code,
-                'instructor'     =>  $request->instructor,
-            );
-            $id = DB::table('courses')->insert($data);
-            if($id > 0)
-            {
-                echo '<div class="alert alert-success">Data Inserted</div>';
-            }
-        } 
-    }
 
+        $person = new Person();
+        $person->add_data($request);
+        
+    }
+    
     function update_data(Request $request)
     {
-        if($request->ajax())
-        {
-            $data = array(
-                $request->column_name       =>  $request->column_value
-            );
-            DB::table('courses')
-                ->where('id', $request->id)
-                ->update($data);
-            echo '<div class="alert alert-success">Data Updated</div>';
-        }
+        $person = new Person();
+        $person->update_data($request);
     }
 
     function delete_data(Request $request)
     {
-        if($request->ajax())
-        {
-            DB::table('courses')
-                ->where('id', $request->id)
-                ->delete();
-            echo '<div class="alert alert-success">Data Deleted</div>';
-        }
+        $person = new Person();
+        $person->delete_data($request);
     }
 }
 ?>
